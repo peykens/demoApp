@@ -1,0 +1,26 @@
+{
+  "name": "demoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter mochawesome --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/peykens/demoApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peykens/demoApp/issues"
+  },
+  "homepage": "https://github.com/peykens/demoApp#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
+    "prom-client": "^11.2.1",
+    "supertest": "^3.4.2"
+  }
+}
