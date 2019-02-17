@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'docker run -d --name -p 3000:3000 demoapp demoapp:latest'
+        sh 'docker run -d -p 3000:3000 --name demoapp demoapp:latest'
         echo 'Kiekeboe'
       }
     }
