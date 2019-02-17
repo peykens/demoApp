@@ -13,8 +13,9 @@ pipeline {
     }
     stage('Deploy') {
       steps {
+        sh '''docker stop demoapp
+docker rm demoapp'''
         sh 'docker run -d -p 3000:3000 --name demoapp demoapp:latest'
-        echo 'Kiekeboe'
       }
     }
   }
