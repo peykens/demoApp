@@ -11,9 +11,9 @@ pipeline {
         sh 'docker build -t demoapp:latest .'
       }
     }
-    stage('Test') {
+    stage('Deploy') {
       steps {
-        sh 'npm test'
+        sh 'docker run -d --name -p 3000:3000 demoapp demoapp:latest'
         echo 'Kiekeboe'
       }
     }
