@@ -1,4 +1,4 @@
-pipeline { 
+pipeline {
   agent any
   stages {
     stage('Git code') {
@@ -7,10 +7,11 @@ pipeline {
       }
     }
     stage('Building image') {
-      steps{
+      steps {
         script {
           docker.build "intMyApp:2.0"
         }
+
       }
     }
     stage('Build image') {
