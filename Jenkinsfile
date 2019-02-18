@@ -9,7 +9,7 @@ pipeline {
     stage('Building image') {
       steps {
         script {
-          docker.build("myapp:latest","-f Dockerfile")
+          docker.build("myapp:latest","-f Dockerfile .")
         }
 
       }
@@ -17,7 +17,7 @@ pipeline {
     stage('Building test image wrapper') {
       steps {
         script {
-          docker.build("mytest:latest","-f Dockerfile.test")
+          docker.build("mytest:latest","-f Dockerfile.test .")
         }
 
       }
