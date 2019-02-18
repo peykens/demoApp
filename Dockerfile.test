@@ -1,0 +1,3 @@
+FROM myapp:latest
+
+CMD ["npm","test"]

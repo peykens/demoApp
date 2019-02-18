@@ -2,12 +2,12 @@ FROM node:10.9
 
 # Create app directory
 #RUN mkdir /app
-WORKDIR /
+WORKDIR /myapp
 
-COPY / /
+COPY / /myapp
 
 RUN npm install
 
-EXPOSE 3001
+EXPOSE 3000
 
 CMD ["node","index.js"]
