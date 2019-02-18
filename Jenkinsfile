@@ -1,9 +1,24 @@
 pipeline {
+  def app
+	def gitCommit = "latest"
+	def packageVersion
+	def name = "intMyAPp"
+	def namespace = "lab5a"
+	def project = "eesi"
+	def dockerRegistry = "registry.lgi.io/libertyglobal"
+  
   agent any
   stages {
     stage('Git code') {
       steps {
         git(url: 'git@github.com:peykens/demoApp.git', branch: 'master')
+      }
+    }
+    stage('Building image') {
+      steps{
+        script {
+          app = docker.build "${name}:${gitCommit}"
+        }
       }
     }
     stage('Build image') {
