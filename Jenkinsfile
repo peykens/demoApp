@@ -9,7 +9,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          docker.build "intMyApp:2.0"
+          docker.build "intmyapp:2.0"
         }
       }
     }
