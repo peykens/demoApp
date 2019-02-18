@@ -9,25 +9,25 @@ pipeline {
     stage('Building image') {
       steps {
         script {
-          docker.build "intmyapp:2.0"
+          docker.build "-f Dockerfile -t myapp:latest"
         }
 
       }
     }
-    stage('Build image') {
+    stage('Building test image wrapper') {
       steps {
-        sh 'docker build -f Dockerfile -t myapp:latest .'
-      }
-    }
-    stage('Build test wrapper') {
-      steps {
-        sh 'docker build -f Dockerfile.test -t mytest:latest .'
+        script {
+          docker.build "-f Dockerfile.test -t mytest:latest"
+        }
       }
     }
     stage('Run npm tests') {
       steps {
-        sh 'docker run -t --rm --name mytest mytest:latest'
+        script {
+          docker.run "-t --rm  --name mytest mytest:latest"
+        }
       }
+        
     }
     stage('Deploy') {
       steps {
