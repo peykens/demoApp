@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Run npm tests') {
       steps {
-        sh 'sh docker run -t --rm  --name mytest mytest:latest'
+        sh 'docker run -t --rm  --name mytest mytest:latest'
       }
     }
     stage('Deploy') {
