@@ -16,7 +16,7 @@ describe('GET /', function() {
         //navigate to root and check the the response is "hello world"
         request(app)
             .get('/bad')
-            .expect(100, done);            
+            .expect(500, done);            
     });
 
     it('respond with 200', function(done) {
