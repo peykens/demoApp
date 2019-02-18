@@ -19,6 +19,7 @@ pipeline {
         script {
           docker.build "-f Dockerfile.test -t mytest:latest"
         }
+
       }
     }
     stage('Run npm tests') {
@@ -26,8 +27,8 @@ pipeline {
         script {
           docker.run "-t --rm  --name mytest mytest:latest"
         }
+
       }
-        
     }
     stage('Deploy') {
       steps {
